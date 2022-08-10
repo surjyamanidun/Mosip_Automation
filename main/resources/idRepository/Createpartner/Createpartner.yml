@@ -1,0 +1,24 @@
+PartnerManager:
+  Create_partner:
+      endPoint: /v2/api/Partner
+      role: idm
+      restMethod: post
+      inputTemplate: idRepository/Createpartner/createpartner
+      outputTemplate: idRepository/Createpartner/createpartnerResult
+      input: '{
+    "countryId": 1,
+    "userName": "testu0",
+    "partnerName": "testp0",
+    "address": "address",
+    "contactNumber": "9951616549",
+    "emailId": "testp0@gmail.com",
+    "state": "kar",
+    "locality": "blr",
+    "organizationName": "testp0",
+    "commonName": "testp0",
+    "isActive": true
+  }'
+      output: '{
+  "message":"Username testu0 is already taken., Email testp0@gmail.com is already taken."
+}'
+ 

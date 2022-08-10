@@ -1,0 +1,71 @@
+SelectTenant:
+  Select_Tenant:
+      endPoint: v2/api/SelectTenant
+      role: idm
+      restMethod: post
+      inputTemplate: idRepository/SelectTenant/selecttenant
+      outputTemplate: idRepository/SelectTenant/selecttenantResult
+      input: '  {
+    "countryName": "India",
+    "partnerName": "technop20"
+  
+}'
+      output: '{
+  "message":"Invalid Partner"
+}'
+  SelectTenant_Invalid_Partner_details:
+      endPoint: v2/api/SelectTenant
+      role: idm
+      restMethod: post
+      inputTemplate: idRepository/SelectTenant/selecttenant
+      outputTemplate: idRepository/SelectTenant/selecttenantResult
+      input: '  {
+    "countryName": "India",
+    "partnerName": "technop23"
+  
+}'
+      output: '{
+  "message":"Invalid Partner"
+}'
+  SelectTenant_Invalid_country_details:
+      endPoint: v2/api/SelectTenant
+      role: idm
+      restMethod: post
+      inputTemplate: idRepository/SelectTenant/selecttenant
+      outputTemplate: idRepository/SelectTenant/selecttenantResult
+      input: '  {
+    "countryName": "china",
+    "partnerName": "technop20"
+  
+}'
+      output: '{
+  "message":"Invalid Partner"
+}'
+  Select_Tenant_Without_Partner_field:
+      endPoint: v2/api/SelectTenant
+      role: idm
+      restMethod: post
+      inputTemplate: idRepository/SelectTenant/selecttenant
+      outputTemplate: idRepository/SelectTenant/selecttenantResult
+      input: '  {
+    "countryName": "india",
+    "partnerName": "$REMOVE$"
+  
+}'
+      output: '{
+  "message":"Invalid Partner"
+}'
+  Select Tenant-Without Country field:
+      endPoint: v2/api/SelectTenant
+      role: idm
+      restMethod: post
+      inputTemplate: idRepository/SelectTenant/selecttenant
+      outputTemplate: idRepository/SelectTenant/selecttenantResult
+      input: '  {
+    "countryName": "$REMOVE$",
+    "partnerName": "technop20"
+  
+}'
+      output: '{
+  "message":"Invalid Partner"
+}'
